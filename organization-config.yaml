@@ -1,0 +1,72 @@
+# If using AWS Control Tower, ensure that all the specified Organizational Units (OU)
+# have been created and enrolled as the accelerator will verify that the OU layout
+# matches before continuing to execute the deployment pipeline.
+
+enable: true
+organizationalUnits:
+  - name: application
+  - name: Infrastructure
+  - name: core
+  - name: galileo
+  - name: pic-sure
+  - name: Security
+# quarantineNewAccounts:
+#   enable: true
+#   scpPolicyName: Quarantine
+serviceControlPolicies:
+  - name: Enforce-IMDSv2
+    description: >
+      Enforce IMDSv2
+    policy: service-control-policies/enforce-imdsv2.json
+    type: customerManaged
+    deploymentTargets:
+      organizationalUnits:
+        - Application
+        - galileo
+        - pic-sure
+  - name: Deny Region Block
+    description: >
+      Deny Region Block except us-east-1 and us-east-2
+    policy: service-control-policies/deny-region-block.json
+    type: customerManaged
+    deploymentTargets:
+      organizationalUnits:
+        - galileo
+  - name: Deny Region Block Additional
+    description: >
+      Deny Region Block except us-east-1, us-east-2 and us-west-2
+    policy: service-control-policies/deny-region-block-add.json
+    type: customerManaged
+    deploymentTargets:
+      organizationalUnits:
+        - Infrastructure
+        - Application
+      accounts: 
+        - lzdev-test-paul
+  - name: Block Root Access
+    description: >
+      Deny Root Access except for two roles for Root Access Management Service
+    policy: service-control-policies/block-root-access.json
+    type: customerManaged
+    deploymentTargets:
+      organizationalUnits:
+        - Root
+# https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_tag-policies.html
+taggingPolicies: []
+#   - name: TagPolicy
+#     description: Organization Tagging Policy
+#     policy: tagging-policies/org-tag-policy.json
+#     deploymentTargets:
+#       organizationalUnits:
+#         - Root
+# https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_backup.html
+# backup policies contain a `delete_after_days` value of 1095 days, or 3 years.  Before
+# enabling this policy, ensure that `delete_after_days` meets your organization's records retention
+# policies.  Similarly, ensure that `move_to_cold_storage_after_days` meets business requirements.
+backupPolicies: []
+#   - name: BackupPolicy
+#     description: Organization Backup Policy
+#     policy: backup-policies/backup-plan.json
+#     deploymentTargets:
+#       organizationalUnits:
+#         - Root

@@ -1,0 +1,44 @@
+mandatoryAccounts:
+  # We recommend you do not change mandatory account names. These are used within Landing Zone Accelerator to reference the accounts from other config files.
+  # The "name" value does not currently support spaces
+  # The "name" value DOES NOT need to match the account name
+  - name: Management
+    description: The management (primary) account. Do not change the name field for this mandatory account. Note, the account name key does not need to match the AWS account name.
+    email: avillach-lzdev-payer@LISTSERV.MED.HARVARD.EDU
+    organizationalUnit: Root
+  - name: LogArchive
+    description: The log archive account. Do not change the name field for this mandatory account. Note, the account name key does not need to match the AWS account name.
+    email: aws-dbmi-lz+lzdev-logging@calists.harvard.edu
+    organizationalUnit: Security
+  - name: Audit
+    description: The security audit account (also referred to as the audit account). Do not change the name field for this mandatory account. Note, the account name key does not need to match the AWS account name.
+    email: aws-dbmi-lz+lzdev-security@calists.harvard.edu
+    organizationalUnit: Core
+workloadAccounts:
+  # The "name" will be used to set the AWS Account name
+  # The "name" value does not currently support spaces
+  # The "name" value DOES NOT need to match the account name
+  - name: shared-services
+    description: The SharedServices account
+    email: aws-dbmi-lz+lzdev-sharedsvc@calists.harvard.edu
+    organizationalUnit: Security
+  - name: test-paul-aug29
+    description: test paul account
+    email: aws-dbmi-lz+lzdev-test-paul-aug29@calists.harvard.edu
+    organizationalUnit: pic-sure
+  - name: lzdev-test-paul
+    description: test paul account
+    email: aws-dbmi-lz+lzdev-test-paul@calists.harvard.edu
+    organizationalUnit: pic-sure
+  - name: lzdev-bdc-dev
+    description: test paul account
+    email: avillach+lzdev-bdc-dev@gmail.com
+    organizationalUnit: pic-sure
+  - name: lzdev-test-avillach
+    description: test account
+    email: avillach+lzdev-test-avillach@gmail.com
+    organizationalUnit: galileo
+  - name: lzdev-network
+    description: paul network account
+    email: aws-dbmi-lz+lzdev-network@calists.harvard.edu
+    organizationalUnit: applications
