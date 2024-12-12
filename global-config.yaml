@@ -59,17 +59,17 @@ logging: ### Organization Trail already created by Control Tower
     #       sendToCloudWatchLogs: true
     #       apiErrorRateInsight: false
     #       apiCallRateInsight: false
-  # sessionManager: ## not needed for test
-  #   sendToCloudWatchLogs: true
-  #   sendToS3: true
-  #   lifecycleRules:
-  #     - enabled: true
-  #       abortIncompleteMultipartUpload: 7
-  #       expiration: 730
-  #       noncurrentVersionExpiration: 730
-  #   attachPolicyToIamRoles:
-  #     - EC2-Default-SSM-AD-Role
-  # cloudwatchLogs:
+  sessionManager: []
+    # sendToCloudWatchLogs: true
+    # sendToS3: true
+    # lifecycleRules:
+    #   - enabled: true
+    #     abortIncompleteMultipartUpload: 7
+    #     expiration: 730
+    #     noncurrentVersionExpiration: 730
+    # attachPolicyToIamRoles:
+    #   - EC2-Default-SSM-AD-Role
+  cloudwatchLogs: []
   #   dynamicPartitioning: dynamic-partitioning/log-filters.json
   #   dataProtection: 
   #     managedDataIdentifiers:
