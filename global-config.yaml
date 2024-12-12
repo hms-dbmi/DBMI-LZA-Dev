@@ -28,8 +28,8 @@ controlTower:
       organizationTrail: true
     security: 
       enableIdentityCenterAccess: false
-logging: [] ### Organization Trail already created by Control Tower
-#   account: LogArchive
+logging: ### Organization Trail already created by Control Tower
+  account: LogArchive
   # cloudtrail:
   #   enable: false
   #   organizationTrail: false
