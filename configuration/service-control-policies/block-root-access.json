@@ -1,0 +1,48 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "ProtectRootUsage",
+      "Action": "*",
+      "Resource": "*",
+      "Effect": "Deny",
+      "Condition": {
+        "StringLike": {
+          "aws:PrincipalArn": [
+            "arn:aws:iam::*:root"
+          ]
+        },
+        "StringNotEqualsIfExists": {
+          "sts:TaskPolicyARN": [
+            "arn:aws:iam::aws:policy/root-task/IAMAuditRootUserCredentials",
+            "arn:aws:iam::aws:policy/root-task/IAMDeleteRootUserCredentials"
+          ]
+        },
+        "StringNotLikeIfExists": {
+          "aws:PrincipalArn": [
+            "arn:aws:sts::927919598956:assumed-role/AWSReservedSSO_AdministratorAccess_9a7f683822c91eba/Kelly_BricenoMarin@hms.harvard.edu",
+            "arn:aws:sts::927919598956:assumed-role/AWSReservedSSO_AdministratorAccess_9a7f683822c91eba/Daniel_Traviglia@hms.harvard.edu"
+          ]
+        },
+        "Null": {
+          "aws:AssumedRoot": []
+        }
+      }
+    },
+    {
+      "Sid": "RESTRICTROOTUSERACCESSKEYS",
+      "Effect": "Deny",
+      "Action": "iam:CreateAccessKey",
+      "Resource": [
+        "*"
+      ],
+      "Condition": {
+        "StringLike": {
+          "aws:PrincipalArn": [
+            "arn:aws:iam::*:root"
+          ]
+        }
+      }
+    }
+  ]
+}
