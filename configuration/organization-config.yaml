@@ -13,7 +13,7 @@ organizationalUnits:
 # quarantineNewAccounts:
 #   enable: true
 #   scpPolicyName: Quarantine
-serviceControlPoliciefs:
+serviceControlPolicies:
   - name: Enforce-IMDSv2
     description: >
       Enforce IMDSv2
@@ -21,8 +21,9 @@ serviceControlPoliciefs:
     type: customerManaged
     deploymentTargets:
       organizationalUnits:
-        - Infrastructure
-        - Security
+        - Application
+        - galileo
+        - pic-sure
   - name: Deny Region Block
     description: >
       Deny Region Block except us-east-1 and us-east-2
@@ -30,8 +31,7 @@ serviceControlPoliciefs:
     type: customerManaged
     deploymentTargets:
       organizationalUnits:
-        - Infrastructure
-        - Security
+        - galileo
   - name: Deny Region Block Additional
     description: >
       Deny Region Block except us-east-1, us-east-2 and us-west-2
@@ -40,7 +40,9 @@ serviceControlPoliciefs:
     deploymentTargets:
       organizationalUnits:
         - Infrastructure
-        - Security
+        - Application
+      accounts: 
+        - lzdev-test-paul
   - name: Block Root Access
     description: >
       Deny Root Access except for two roles for Root Access Management Service
@@ -48,24 +50,23 @@ serviceControlPoliciefs:
     type: customerManaged
     deploymentTargets:
       organizationalUnits:
-        - Infrastructure
-        - Security
-# https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_tag-policies.html
-taggingPolicies:
-  - name: TagPolicy
-    description: Organization Tagging Policy
-    policy: tagging-policies/org-tag-policy.json
-    deploymentTargets:
-      organizationalUnits:
         - Root
+# https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_tag-policies.html
+taggingPolicies: []
+#   - name: TagPolicy
+#     description: Organization Tagging Policy
+#     policy: tagging-policies/org-tag-policy.json
+#     deploymentTargets:
+#       organizationalUnits:
+#         - Root
 # https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_backup.html
 # backup policies contain a `delete_after_days` value of 1095 days, or 3 years.  Before
 # enabling this policy, ensure that `delete_after_days` meets your organization's records retention
 # policies.  Similarly, ensure that `move_to_cold_storage_after_days` meets business requirements.
-backupPolicies:
-  - name: BackupPolicy
-    description: Organization Backup Policy
-    policy: backup-policies/backup-plan.json
-    deploymentTargets:
-      organizationalUnits:
-        - Root
+backupPolicies: []
+#   - name: BackupPolicy
+#     description: Organization Backup Policy
+#     policy: backup-policies/backup-plan.json
+#     deploymentTargets:
+#       organizationalUnits:
+#         - Root

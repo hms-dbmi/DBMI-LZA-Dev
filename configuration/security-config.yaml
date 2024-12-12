@@ -12,20 +12,20 @@ centralSecurityServices:
   # https://docs.aws.amazon.com/prescriptive-guidance/latest/security-reference-architecture/security-tooling.html #
   ##################################################################################################################
   delegatedAdminAccount: Audit
-  ebsDefaultVolumeEncryption:
-    enable: true
-    excludeRegions: []
-  s3PublicAccessBlock:
-    enable: true
-    excludeAccounts: []
-  scpRevertChangesConfig:
-    enable: true
-    snsTopicName: Security
-  macie:
-    enable: false
-    excludeRegions: []
-    policyFindingsPublishingFrequency: FIFTEEN_MINUTES
-    publishSensitiveDataFindings: true
+  # ebsDefaultVolumeEncryption:
+  #   enable: true
+  #   excludeRegions: []
+  # s3PublicAccessBlock:
+  #   enable: true
+  #   excludeAccounts: []
+  # scpRevertChangesConfig:
+  #   enable: true
+  #   snsTopicName: Security
+  # macie:
+  #   enable: false
+  #   excludeRegions: []
+  #   policyFindingsPublishingFrequency: FIFTEEN_MINUTES
+  #   publishSensitiveDataFindings: true
   guardduty:
     enable: true
     excludeRegions: []
@@ -37,17 +37,17 @@ centralSecurityServices:
       overrideExisting: true
       destinationType: S3
       exportFrequency: FIFTEEN_MINUTES
-  auditManager:
-    enable: false
-    excludeRegions: []
-    defaultReportsConfiguration:
-      enable: true
-      destinationType: S3
-    lifecycleRules:
-      - enabled: true
-        abortIncompleteMultipartUpload: 7
-        expiration: 1000
-        noncurrentVersionExpiration: 1000
+  # auditManager:
+  #   enable: false
+  #   excludeRegions: []
+  #   defaultReportsConfiguration:
+  #     enable: true
+  #     destinationType: S3
+    # lifecycleRules:
+    #   - enabled: true
+    #     abortIncompleteMultipartUpload: 7
+    #     expiration: 1000
+    #     noncurrentVersionExpiration: 1000
   detective:
     enable: true
     excludeRegions: []
@@ -71,7 +71,7 @@ centralSecurityServices:
       - name: AWS Foundational Security Best Practices v1.0.0
         # https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-standards-fsbp-controls.html
         enable: true
-      - name: CIS AWS Foundations Benchmark v1.4.0
+      - name: CIS AWS Foundations Benchmark v3.0.0
         # https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-cis-controls.html
         enable: true
       - name: NIST Special Publication 800-53 Revision 5
