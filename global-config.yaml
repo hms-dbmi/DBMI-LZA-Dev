@@ -26,9 +26,9 @@ controlTower:
       loggingBucketRetentionDays: 365
       accessLoggingBucketRetentionDays: 3650
       organizationTrail: true
-    # security: ### Don't want to mess up anything with Identity Center
-    #   enableIdentityCenterAccess: true
-# logging: ### Organization Trail already created by Control Tower
+    security: 
+      enableIdentityCenterAccess: false
+logging: [] ### Organization Trail already created by Control Tower
 #   account: LogArchive
   # cloudtrail:
   #   enable: false
