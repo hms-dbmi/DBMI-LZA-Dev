@@ -21,7 +21,7 @@ centralSecurityServices:
   # scpRevertChangesConfig:
   #   enable: true
   #   snsTopicName: Security
-  # macie:
+  macie: []
   #   enable: false
   #   excludeRegions: []
   #   policyFindingsPublishingFrequency: FIFTEEN_MINUTES
@@ -37,7 +37,7 @@ centralSecurityServices:
       overrideExisting: true
       destinationType: S3
       exportFrequency: FIFTEEN_MINUTES
-  # auditManager:
+  auditManager: []
   #   enable: false
   #   excludeRegions: []
   #   defaultReportsConfiguration:
@@ -92,7 +92,7 @@ iamPasswordPolicy:
   minimumPasswordLength: 14
   passwordReusePrevention: 24
   maxPasswordAge: 90
-# awsConfig:
+awsConfig: []
 #   enableConfigurationRecorder: true
 #   enableDeliveryChannel: true
 #   ruleSets:
@@ -198,3 +198,4 @@ iamPasswordPolicy:
     #         - AWS::RDS::DBCluster
     #       identifier: AURORA_RESOURCES_PROTECTED_BY_BACKUP_PLAN
  
+cloudWatch: []
