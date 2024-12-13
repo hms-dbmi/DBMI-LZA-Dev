@@ -12,20 +12,20 @@ centralSecurityServices:
   # https://docs.aws.amazon.com/prescriptive-guidance/latest/security-reference-architecture/security-tooling.html #
   ##################################################################################################################
   delegatedAdminAccount: Audit
-  # ebsDefaultVolumeEncryption:
-  #   enable: true
-  #   excludeRegions: []
-  # s3PublicAccessBlock:
-  #   enable: true
-  #   excludeAccounts: []
+  ebsDefaultVolumeEncryption:
+    enable: false
+    excludeRegions: []
+  s3PublicAccessBlock:
+    enable: false
+    excludeAccounts: []
   # scpRevertChangesConfig:
   #   enable: true
   #   snsTopicName: Security
-  macie: []
-  #   enable: false
-  #   excludeRegions: []
-  #   policyFindingsPublishingFrequency: FIFTEEN_MINUTES
-  #   publishSensitiveDataFindings: true
+  macie:
+    enable: false
+    # excludeRegions: []
+    # policyFindingsPublishingFrequency: FIFTEEN_MINUTES
+    publishSensitiveDataFindings: false
   guardduty:
     enable: true
     excludeRegions: []
@@ -37,12 +37,12 @@ centralSecurityServices:
       overrideExisting: true
       destinationType: S3
       exportFrequency: FIFTEEN_MINUTES
-  auditManager: []
-  #   enable: false
+  auditManager:
+    enable: false
   #   excludeRegions: []
-  #   defaultReportsConfiguration:
-  #     enable: true
-  #     destinationType: S3
+    defaultReportsConfiguration:
+      enable: false
+      destinationType: S3
     # lifecycleRules:
     #   - enabled: true
     #     abortIncompleteMultipartUpload: 7
@@ -92,9 +92,9 @@ iamPasswordPolicy:
   minimumPasswordLength: 14
   passwordReusePrevention: 24
   maxPasswordAge: 90
-awsConfig: []
-#   enableConfigurationRecorder: true
-#   enableDeliveryChannel: true
+awsConfig:
+  enableConfigurationRecorder: false
+  enableDeliveryChannel: false
 #   ruleSets:
 #     - deploymentTargets:
 #         organizationalUnits:
@@ -198,4 +198,6 @@ awsConfig: []
     #         - AWS::RDS::DBCluster
     #       identifier: AURORA_RESOURCES_PROTECTED_BY_BACKUP_PLAN
  
-cloudWatch: []
+cloudWatch:
+  metricSets: []
+  alarmSets: []
