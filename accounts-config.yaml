@@ -12,7 +12,7 @@ mandatoryAccounts:
     organizationalUnit: Security
   - name: Audit
     description: The security audit account (also referred to as the audit account). Do not change the name field for this mandatory account. Note, the account name key does not need to match the AWS account name.
-    email: aws-dbmi-lz+lzdev-security@calists.harvard.edu
+    email: aws-dbmi-lz+lzdev-sharedsvc@calists.harvard.edu
     organizationalUnit: core
 workloadAccounts:
   # The "name" will be used to set the AWS Account name
