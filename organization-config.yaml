@@ -5,11 +5,12 @@
 enable: true
 organizationalUnits:
   - name: applications
-  - name: Infrastructure
   - name: core
   - name: galileo
   - name: pic-sure
   - name: Security
+  - name: Infrastructure
+    ignore: true
 # quarantineNewAccounts:
 #   enable: true
 #   scpPolicyName: Quarantine

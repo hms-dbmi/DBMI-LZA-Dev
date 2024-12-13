@@ -5,7 +5,7 @@ mandatoryAccounts:
   - name: Management
     description: The management (primary) account. Do not change the name field for this mandatory account. Note, the account name key does not need to match the AWS account name.
     email: avillach-lzdev-payer@LISTSERV.MED.HARVARD.EDU
-    organizationalUnit: Root
+    organizationalUnit: core
   - name: LogArchive
     description: The log archive account. Do not change the name field for this mandatory account. Note, the account name key does not need to match the AWS account name.
     email: aws-dbmi-lz+lzdev-logging@calists.harvard.edu
