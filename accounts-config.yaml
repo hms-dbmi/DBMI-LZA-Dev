@@ -18,10 +18,10 @@ workloadAccounts:
   # The "name" will be used to set the AWS Account name
   # The "name" value does not currently support spaces
   # The "name" value DOES NOT need to match the account name
-  - name: shared-services
-    description: The SharedServices account
-    email: aws-dbmi-lz+lzdev-sharedsvc@calists.harvard.edu
-    organizationalUnit: Security
+  - name: security
+    description: security account
+    email: aws-dbmi-lz+lzdev-security@calists.harvard.edu
+    organizationalUnit: core
   - name: test-paul-aug29
     description: test paul account
     email: aws-dbmi-lz+lzdev-test-paul-aug29@calists.harvard.edu
