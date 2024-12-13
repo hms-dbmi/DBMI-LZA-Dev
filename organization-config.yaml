@@ -21,7 +21,7 @@ serviceControlPolicies:
     type: customerManaged
     deploymentTargets:
       organizationalUnits:
-        - Application
+        - applications
         - galileo
         - pic-sure
   - name: Deny Region Block
@@ -40,7 +40,7 @@ serviceControlPolicies:
     deploymentTargets:
       organizationalUnits:
         - Infrastructure
-        - Application
+        - applications
       accounts: 
         - lzdev-test-paul
   - name: Block Root Access
