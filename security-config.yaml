@@ -95,7 +95,7 @@ iamPasswordPolicy:
 awsConfig:
   enableConfigurationRecorder: false
   enableDeliveryChannel: false
-#   ruleSets:
+  ruleSets: []
 #     - deploymentTargets:
 #         organizationalUnits:
 #           - Root
