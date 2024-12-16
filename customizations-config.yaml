@@ -11,7 +11,7 @@ customizations:
     #   runOrder: 1
     #   template: ./cfn-templates/iam-analyzer.yaml
     #   terminationProtection: true
-    - name: AWS Config Rules
+    - name: LZA-AWS-Config-Rules
       description: Enables Additional AWS Config Rules
       regions:
         - us-east-1
@@ -22,7 +22,7 @@ customizations:
       runOrder: 1
       template: ./cfn-templates/config-rules.yml
       terminationProtection: true
-    - name: AWS Config Global Rules
+    - name: LZA-AWS-Config-Global-Rules
       description: Enables Additional AWS Config Rules
       regions:
         - us-east-1
@@ -33,7 +33,7 @@ customizations:
       runOrder: 2
       template: ./cfn-templates/config-rules-global.yml
       terminationProtection: true
-    - name: RDS S3 Integration Role
+    - name: LZA-RDS-S3-Integration-Role
       description: Enables RDS S3 Integration Role - Pauls
       regions:
         - us-east-1
@@ -43,7 +43,7 @@ customizations:
       runOrder: 3
       template: ./cfn-templates/rds-s3-integration-role.yml
       terminationProtection: true
-    - name: Avillach Lab instance profile
+    - name: LZA-Avillach-Lab-instance-profile
       description: Enables Avillach Lab instance profile
       regions:
         - us-east-1
