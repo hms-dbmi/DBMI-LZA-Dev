@@ -26,17 +26,17 @@ centralSecurityServices:
     # excludeRegions: []
     # policyFindingsPublishingFrequency: FIFTEEN_MINUTES
     publishSensitiveDataFindings: false
-  guardduty:
-    enable: true
-    excludeRegions: []
-    s3Protection:
-      enable: true
-      excludeRegions: []
-    exportConfiguration:
-      enable: true
-      overrideExisting: true
-      destinationType: S3
-      exportFrequency: FIFTEEN_MINUTES
+  guardduty: []
+    # enable: true
+    # excludeRegions: []
+    # s3Protection:
+    #   enable: true
+    #   excludeRegions: []
+    # exportConfiguration:
+    #   enable: true
+    #   overrideExisting: true
+    #   destinationType: S3
+    #   exportFrequency: FIFTEEN_MINUTES
   auditManager:
     enable: false
   #   excludeRegions: []
