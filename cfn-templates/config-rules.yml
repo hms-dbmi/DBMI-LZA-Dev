@@ -2,8 +2,6 @@ AWSTemplateFormatVersion: 2010-09-09
 Description: Enables an AWS Landing Zone account baseline AWS Config rules.
 
 Parameters:
-  OrganizationName:
-    Type: String
   EnableEncryptedVolumesRule:
     Type: String
     Description: "Enables the AWS managed encrypted-volumes config rule. To disable, change the parameter value to false."

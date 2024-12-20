@@ -2,8 +2,6 @@ AWSTemplateFormatVersion: 2010-09-09
 Description: Enables an AWS Landing Zone account baseline AWS Config rules.
 
 Parameters:
-  OrganizationName:
-    Type: String
   EnableRootMfaRule:
     Type: String
     Description: "Enables the AWS managed root-account-mfa-enabled config rule. To disable, change the parameter value to false."

@@ -1,8 +1,5 @@
 AWSTemplateFormatVersion: 2010-09-09
 Description: rds-s3-integration-role
-Parameters:
-  OrganizationName:
-    Type: String
 
 Resources:
   rdss3integrationrole:
@@ -36,7 +33,6 @@ Resources:
                   - 'kms:Encrypt'
                   - 'kms:GenerateDataKey'
                   - 'kms:GenerateDataKeyPair'
-
                 Resource:
                   - 'arn:aws:secretsmanager:us-east-1:718952877825:secret:*'
                   - !Sub 'arn:aws:secretsmanager:us-east-1:${AWS::AccountId}:secret:*'
@@ -46,5 +42,4 @@ Resources:
                   - !Sub 'arn:aws:kms:us-east-1:${AWS::AccountId}:key/*'
                   - !Sub 'arn:aws:s3:::avillach-*-etl'
                   - !Sub 'arn:aws:s3:::avillach-*-etl/*'
-
       RoleName: rds-s3-integration-role

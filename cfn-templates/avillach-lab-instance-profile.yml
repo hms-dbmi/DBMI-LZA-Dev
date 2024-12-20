@@ -35,7 +35,6 @@ Resources:
                   - 'kms:Encrypt'
                   - 'kms:GenerateDataKey'
                   - 'kms:GenerateDataKeyPair'
-
                 Resource:
                   - 'arn:aws:secretsmanager:us-east-1:718952877825:secret:*'
                   - !Sub 'arn:aws:secretsmanager:us-east-1:${AWS::AccountId}:secret:*'
@@ -60,7 +59,6 @@ Resources:
                   - 'ec2:RevokeSecurityGroupEgress'
                   - 'ec2:DescribeSecurityGroups'
                 Resource: '*'
-
       RoleName: AvillachLabIamInstanceRole
 
   AvillachLabIamInstanceProfile:
