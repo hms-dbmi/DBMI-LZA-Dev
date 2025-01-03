@@ -33,9 +33,9 @@ customizations:
     #   deploymentTargets:
     #     organizationalUnits:
     #       - Root
-      runOrder: 2
-      template: ./cfn-templates/config-rules-global.yml
-      terminationProtection: true
+      # runOrder: 2
+      # template: ./cfn-templates/config-rules-global.yml
+      # terminationProtection: true
     - name: LZA-RDS-S3-Integration-Role
       description: Enables RDS S3 Integration Role - Pauls
       regions:
