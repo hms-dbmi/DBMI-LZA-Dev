@@ -36,24 +36,24 @@ customizations:
       # runOrder: 2
       # template: ./cfn-templates/config-rules-global.yml
       # terminationProtection: true
-    - name: LZA-RDS-S3-Integration-Role
-      description: Enables RDS S3 Integration Role - Pauls
-      regions:
-        - us-east-1
-      deploymentTargets:
-        organizationalUnits:
-          - pic-sure
-      runOrder: 3
-      template: ./cfn-templates/rds-s3-integration-role.yml
-      terminationProtection: true
-    - name: LZA-Avillach-Lab-instance-profile
-      description: Enables Avillach Lab instance profile
-      regions:
-        - us-east-1
-      deploymentTargets:
-        organizationalUnits:
-          - pic-sure
-          - galileo
-      runOrder: 4
-      template: ./cfn-templates/rds-s3-integration-role.yml
-      terminationProtection: true
+    # - name: LZA-RDS-S3-Integration-Role
+    #   description: Enables RDS S3 Integration Role - Pauls
+    #   regions:
+    #     - us-east-1
+    #   deploymentTargets:
+    #     organizationalUnits:
+    #       - pic-sure
+    #   runOrder: 3
+    #   template: ./cfn-templates/rds-s3-integration-role.yml
+      # terminationProtection: true
+    # - name: LZA-Avillach-Lab-instance-profile
+    #   description: Enables Avillach Lab instance profile
+    #   regions:
+    #     - us-east-1
+    #   deploymentTargets:
+    #     organizationalUnits:
+    #       - pic-sure
+    #       - galileo
+    #   runOrder: 4
+    #   template: ./cfn-templates/avillach-lab-instance-profile.yml
+    #   terminationProtection: true
